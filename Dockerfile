@@ -29,7 +29,7 @@ RUN apt-get update && apt-get install -y \
     git curl unzip libpq-dev libonig-dev libzip-dev zip \
     libpng-dev libjpeg-dev libfreetype6-dev g++ make python3 \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install pdo pdo_mysql mbstring zip gd exif pcntl bcmath \
+    && docker-php-ext-install pdo pdo_mysql pdo_pgsql pgsql mbstring zip gd exif pcntl bcmath \
     && a2enmod rewrite \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
@@ -62,29 +62,17 @@ COPY . .
 COPY --from=frontend /app/public/build ./public/build
 
 # -------------------------------
-# Laravel setup
-# -------------------------------
-# Generate APP_KEY if missing
-RUN php artisan key:generate --force || true
-
-# Cache configs, routes, views
-RUN php artisan config:cache && php artisan route:cache && php artisan view:cache
-
 # Set permissions
+# -------------------------------
 RUN chown -R www-data:www-data /var/www/html \
-    && chmod -R 755 /var/www/html/storage \
-    && chmod -R 755 /var/www/html/bootstrap/cache
+    && chmod -R 775 /var/www/html/storage \
+    && chmod -R 775 /var/www/html/bootstrap/cache
 
 # -------------------------------
 # Configure Apache for Laravel
 # -------------------------------
 RUN sed -i 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf \
     && echo "ServerName localhost" >> /etc/apache2/apache2.conf
-
-# Expose Render's port (Render sets $PORT automatically)
-ENV PORT 10000
-RUN sed -i "s/Listen 80/Listen ${PORT}/g" /etc/apache2/ports.conf \
-    && sed -i "s/:80/:${PORT}/g" /etc/apache2/sites-available/000-default.conf
 
 # Laravel directory permissions for Apache
 RUN echo '<Directory /var/www/html/public>\n\
@@ -95,13 +83,44 @@ RUN echo '<Directory /var/www/html/public>\n\
     && a2enconf laravel
 
 # -------------------------------
-# Expose port & health check
+# Create entrypoint script
 # -------------------------------
-EXPOSE ${PORT}
-HEALTHCHECK --interval=30s --timeout=3s --start-period=40s \
-    CMD curl -f http://localhost:${PORT} || exit 1
+RUN echo '#!/bin/bash\n\
+set -e\n\
+\n\
+# Use PORT from environment or default to 10000\n\
+PORT=${PORT:-10000}\n\
+\n\
+# Update Apache to listen on the correct port\n\
+sed -i "s/Listen 80/Listen ${PORT}/g" /etc/apache2/ports.conf\n\
+sed -i "s/:80/:${PORT}/g" /etc/apache2/sites-available/000-default.conf\n\
+\n\
+# Clear and recache configs with environment variables\n\
+php artisan config:clear\n\
+php artisan cache:clear\n\
+php artisan route:clear\n\
+php artisan view:clear\n\
+\n\
+# Run migrations (optional - remove if you do this manually)\n\
+php artisan migrate --force || true\n\
+\n\
+# Cache for production\n\
+php artisan config:cache\n\
+php artisan route:cache\n\
+php artisan view:cache\n\
+\n\
+# Start Apache\n\
+exec apache2-foreground' > /usr/local/bin/docker-entrypoint.sh \
+    && chmod +x /usr/local/bin/docker-entrypoint.sh
 
 # -------------------------------
-# Start Apache
+# Expose port & health check
 # -------------------------------
-CMD ["apache2-foreground"]
+EXPOSE 10000
+HEALTHCHECK --interval=30s --timeout=3s --start-period=40s \
+    CMD curl -f http://localhost:${PORT:-10000} || exit 1
+
+# -------------------------------
+# Start Apache via entrypoint
+# -------------------------------
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
