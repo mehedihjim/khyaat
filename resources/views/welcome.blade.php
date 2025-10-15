@@ -78,7 +78,7 @@
 
         <!-- Tagline -->
         <p class="text-amber-200 text-lg md:text-xl mb-12 fade-in-up delay-2 tracking-widest uppercase font-light">
-            Where Style Meets Elegance
+            Coming Soon~
         </p>
 
         <!-- Main message -->
