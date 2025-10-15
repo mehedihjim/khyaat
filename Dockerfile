@@ -95,20 +95,6 @@ PORT=${PORT:-10000}\n\
 sed -i "s/Listen 80/Listen ${PORT}/g" /etc/apache2/ports.conf\n\
 sed -i "s/:80/:${PORT}/g" /etc/apache2/sites-available/000-default.conf\n\
 \n\
-# Clear and recache configs with environment variables\n\
-php artisan config:clear\n\
-php artisan cache:clear\n\
-php artisan route:clear\n\
-php artisan view:clear\n\
-\n\
-# Run migrations (optional - remove if you do this manually)\n\
-php artisan migrate --force || true\n\
-\n\
-# Cache for production\n\
-php artisan config:cache\n\
-php artisan route:cache\n\
-php artisan view:cache\n\
-\n\
 # Start Apache\n\
 exec apache2-foreground' > /usr/local/bin/docker-entrypoint.sh \
     && chmod +x /usr/local/bin/docker-entrypoint.sh
