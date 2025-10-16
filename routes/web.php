@@ -1,17 +1,19 @@
 <?php
 
-use Illuminate\Support\Facades\Artisan;
+use App\Http\Controllers\Admin\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 
-Route::get('/setup-database', function () {
-    try {
-        Artisan::call('migrate:fresh', ['--force' => true]);
-        return 'Database setup complete! Tables created: ' . Artisan::output();
-    } catch (\Exception $e) {
-        return 'Error: ' . $e->getMessage();
-    }
+// Admin auth routes (guest only)
+Route::prefix('ky-admin')->middleware('guest')->group(function () {
+    Route::get('/login', [LoginController::class, 'showLoginForm'])->name('admin.login');
+    Route::post('/login', [LoginController::class, 'login']);
 });
 
-Route::get('/', function () {
-    return view('welcome');
+// Admin protected routes
+Route::middleware(['auth', 'admin'])->prefix('ky-admin')->group(function () {
+    Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
+    Route::post('/logout', [LoginController::class, 'logout'])->name('admin.logout');
 });
+
+require __DIR__.'/auth.php';
