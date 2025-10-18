@@ -26,7 +26,7 @@ class LoginController extends Controller
             // Check if user is admin
             if ($user->is_admin) {
                 $request->session()->regenerate();
-                return redirect()->intended('/ky-admin/dashboard');
+                return redirect()->intended('/ky-admin');
             }
 
             // Not an admin, log them out

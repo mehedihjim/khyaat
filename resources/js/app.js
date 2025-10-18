@@ -1,86 +1,108 @@
 /**
-* Theme: Larkon - Responsive Bootstrap 5 Admin Dashboard
-* Author: Techzaa
-* Module/App: Main Js
-*/
+ * Theme: Larkon - Responsive Bootstrap 5 Admin Dashboard
+ * Author: Techzaa
+ * Module/App: Main Js
+ */
 
-import $ from 'jquery'
+import $ from "jquery";
 
-window.jQuery = window.$ = $
+window.jQuery = window.$ = $;
 
-import bootstrap from 'bootstrap/dist/js/bootstrap.min';
+import bootstrap from "bootstrap/dist/js/bootstrap.min";
 
 window.bootstrap = bootstrap;
 
-import Prism from 'prismjs';
-import NormalizeWhitespace from 'prismjs/plugins/normalize-whitespace/prism-normalize-whitespace.js'
+import Prism from "prismjs";
+import NormalizeWhitespace from "prismjs/plugins/normalize-whitespace/prism-normalize-whitespace.js";
 import Swiper from "swiper";
-import Inputmask from 'inputmask';
-import ClipboardJS from 'clipboard';
-import Gumshoe from 'gumshoejs/dist/gumshoe'
-import Toastify from 'toastify-js'
-import Choices from 'choices.js';
+import Inputmask from "inputmask";
+import ClipboardJS from "clipboard";
+import Gumshoe from "gumshoejs/dist/gumshoe";
+import Toastify from "toastify-js";
+import Choices from "choices.js";
+import "boxicons/css/boxicons.min.css";
 
-import 'iconify-icon';
-import 'simplebar'
+import "iconify-icon";
+import "simplebar";
 
 // Components
 class Components {
     initBootstrapComponents() {
-
         // Popovers
-        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
-        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+        const popoverTriggerList = document.querySelectorAll(
+            '[data-bs-toggle="popover"]'
+        );
+        const popoverList = [...popoverTriggerList].map(
+            (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl)
+        );
 
         // Tooltips
-        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+        const tooltipTriggerList = document.querySelectorAll(
+            '[data-bs-toggle="tooltip"]'
+        );
+        const tooltipList = [...tooltipTriggerList].map(
+            (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+        );
 
         // offcanvas
-        const offcanvasElementList = document.querySelectorAll('.offcanvas')
-        const offcanvasList = [...offcanvasElementList].map(offcanvasEl => new bootstrap.Offcanvas(offcanvasEl))
+        const offcanvasElementList = document.querySelectorAll(".offcanvas");
+        const offcanvasList = [...offcanvasElementList].map(
+            (offcanvasEl) => new bootstrap.Offcanvas(offcanvasEl)
+        );
 
         //Toasts
         var toastPlacement = document.getElementById("toastPlacement");
         if (toastPlacement) {
-            document.getElementById("selectToastPlacement").addEventListener("change", function () {
-                if (!toastPlacement.dataset.originalClass) {
-                    toastPlacement.dataset.originalClass = toastPlacement.className;
-                }
-                toastPlacement.className = toastPlacement.dataset.originalClass + " " + this.value;
+            document
+                .getElementById("selectToastPlacement")
+                .addEventListener("change", function () {
+                    if (!toastPlacement.dataset.originalClass) {
+                        toastPlacement.dataset.originalClass =
+                            toastPlacement.className;
+                    }
+                    toastPlacement.className =
+                        toastPlacement.dataset.originalClass + " " + this.value;
+                });
+        }
+
+        var toastElList = [].slice.call(document.querySelectorAll(".toast"));
+        var toastList = toastElList.map(function (toastEl) {
+            return new bootstrap.Toast(toastEl);
+        });
+
+        const alertTrigger = document.getElementById("liveAlertBtn");
+        if (alertTrigger) {
+            alertTrigger.addEventListener("click", () => {
+                alert("Nice, you triggered this alert message!", "success");
             });
         }
-
-        var toastElList = [].slice.call(document.querySelectorAll('.toast'))
-        var toastList = toastElList.map(function (toastEl) {
-            return new bootstrap.Toast(toastEl)
-        })
-
-
-        const alertTrigger = document.getElementById('liveAlertBtn')
-        if (alertTrigger) {
-            alertTrigger.addEventListener('click', () => {
-                alert('Nice, you triggered this alert message!', 'success')
-            })
-        }
-
     }
 
     initfullScreenListener() {
-        var fullScreenBtn = document.querySelector('[data-toggle="fullscreen"]');
+        var fullScreenBtn = document.querySelector(
+            '[data-toggle="fullscreen"]'
+        );
 
         if (fullScreenBtn) {
-            fullScreenBtn.addEventListener('click', function (e) {
+            fullScreenBtn.addEventListener("click", function (e) {
                 e.preventDefault();
-                document.body.classList.toggle('fullscreen-enable')
-                if (!document.fullscreenElement && /* alternative standard method */ !document.mozFullScreenElement && !document.webkitFullscreenElement) {
+                document.body.classList.toggle("fullscreen-enable");
+                if (
+                    !document.fullscreenElement &&
+                    /* alternative standard method */ !document.mozFullScreenElement &&
+                    !document.webkitFullscreenElement
+                ) {
                     // current working methods
                     if (document.documentElement.requestFullscreen) {
                         document.documentElement.requestFullscreen();
                     } else if (document.documentElement.mozRequestFullScreen) {
                         document.documentElement.mozRequestFullScreen();
-                    } else if (document.documentElement.webkitRequestFullscreen) {
-                        document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+                    } else if (
+                        document.documentElement.webkitRequestFullscreen
+                    ) {
+                        document.documentElement.webkitRequestFullscreen(
+                            Element.ALLOW_KEYBOARD_INPUT
+                        );
                     }
                 } else {
                     if (document.cancelFullScreen) {
@@ -97,27 +119,27 @@ class Components {
 
     // App Search
     initAppSearch() {
-        this.searchOption = document.getElementById('search-options');
-        this.searchDropdown = document.getElementById('search-dropdown');
-        this.searchClose = document.getElementById('search-close-options');
+        this.searchOption = document.getElementById("search-options");
+        this.searchDropdown = document.getElementById("search-dropdown");
+        this.searchClose = document.getElementById("search-close-options");
         const self = this;
         if (this.searchOption) {
-            ['focus', 'keyup'].forEach(function (event) {
+            ["focus", "keyup"].forEach(function (event) {
                 self.searchOption.addEventListener(event, function (e) {
                     if (self.searchOption.value.length > 0) {
-                        self.searchDropdown.classList.add('show');
-                        self.searchClose.classList.remove('d-none');
+                        self.searchDropdown.classList.add("show");
+                        self.searchClose.classList.remove("d-none");
                     } else {
-                        self.searchDropdown.classList.remove('show');
-                        self.searchClose.classList.add('d-none');
+                        self.searchDropdown.classList.remove("show");
+                        self.searchClose.classList.add("d-none");
                     }
-                })
-            })
+                });
+            });
         }
         if (self.searchClose) {
-            self.searchClose.addEventListener('click', function () {
-                self.searchDropdown.classList.remove('show');
-                self.searchClose.classList.add('d-none');
+            self.searchClose.addEventListener("click", function () {
+                self.searchDropdown.classList.remove("show");
+                self.searchClose.classList.add("d-none");
                 self.searchOption.value = "";
             });
         }
@@ -169,16 +191,20 @@ class FormValidation {
         // Example starter JavaScript for disabling form submissions if there are invalid fields
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
         // Loop over them and prevent submission
-        document.querySelectorAll('.needs-validation').forEach(form => {
-            form.addEventListener('submit', event => {
-                if (!form.checkValidity()) {
-                    event.preventDefault()
-                    event.stopPropagation()
-                }
+        document.querySelectorAll(".needs-validation").forEach((form) => {
+            form.addEventListener(
+                "submit",
+                (event) => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
 
-                form.classList.add('was-validated')
-            }, false)
-        })
+                    form.classList.add("was-validated");
+                },
+                false
+            );
+        });
     }
 
     init() {
@@ -188,10 +214,12 @@ class FormValidation {
 
 //  Form Advanced
 class FormAdvanced {
-
     initMask() {
-        document.querySelectorAll('[data-toggle="input-mask"]').forEach(e => {
-            const maskFormat = e.getAttribute('data-mask-format').toString().replaceAll('0', '9');
+        document.querySelectorAll('[data-toggle="input-mask"]').forEach((e) => {
+            const maskFormat = e
+                .getAttribute("data-mask-format")
+                .toString()
+                .replaceAll("0", "9");
             e.setAttribute("data-mask-format", maskFormat);
             const im = new Inputmask(maskFormat);
             im.mask(e);
@@ -205,7 +233,8 @@ class FormAdvanced {
             var choiceData = {};
             var isChoicesVal = item.attributes;
             if (isChoicesVal["data-choices-groups"]) {
-                choiceData.placeholderValue = "This is a placeholder set in the config";
+                choiceData.placeholderValue =
+                    "This is a placeholder set in the config";
             }
             if (isChoicesVal["data-choices-search-false"]) {
                 choiceData.searchEnabled = false;
@@ -226,10 +255,12 @@ class FormAdvanced {
                 choiceData.removeItemButton = true;
             }
             if (isChoicesVal["data-choices-limit"]) {
-                choiceData.maxItemCount = isChoicesVal["data-choices-limit"].value.toString();
+                choiceData.maxItemCount =
+                    isChoicesVal["data-choices-limit"].value.toString();
             }
             if (isChoicesVal["data-choices-limit"]) {
-                choiceData.maxItemCount = isChoicesVal["data-choices-limit"].value.toString();
+                choiceData.maxItemCount =
+                    isChoicesVal["data-choices-limit"].value.toString();
             }
             if (isChoicesVal["data-choices-editItem-true"]) {
                 choiceData.maxItemCount = true;
@@ -244,7 +275,9 @@ class FormAdvanced {
             if (isChoicesVal["data-choices-text-disabled-true"]) {
                 choiceData.addItems = false;
             }
-            isChoicesVal["data-choices-text-disabled-true"] ? new Choices(item, choiceData).disable() : new Choices(item, choiceData);
+            isChoicesVal["data-choices-text-disabled-true"]
+                ? new Choices(item, choiceData).disable()
+                : new Choices(item, choiceData);
         });
     }
 
@@ -252,7 +285,6 @@ class FormAdvanced {
         this.initMask();
         this.initFormChoices();
     }
-
 }
 
 // Card Portlet
@@ -260,18 +292,19 @@ class Portlet {
     constructor() {
         this.portletIdentifier = ".card";
         this.portletCloser = '.card a[data-toggle="remove"]';
-        this.portletRefresher = '.card a[data-toggle="reload"]'
+        this.portletRefresher = '.card a[data-toggle="reload"]';
     }
 
     initCloser() {
         const self = this;
-        document.querySelectorAll(this.portletCloser).forEach(element => {
-            element.addEventListener('click', function (e) {
+        document.querySelectorAll(this.portletCloser).forEach((element) => {
+            element.addEventListener("click", function (e) {
                 e.preventDefault();
                 const portlet = element.closest(self.portletIdentifier);
                 const portlet_parent = portlet?.parentElement;
                 if (portlet) portlet.remove();
-                if (portlet_parent?.children.length === 0) portlet_parent?.remove();
+                if (portlet_parent?.children.length === 0)
+                    portlet_parent?.remove();
                 self.init();
             });
         });
@@ -281,58 +314,60 @@ class Portlet {
         const self = this;
         const elements = document.querySelectorAll(this.portletRefresher);
         elements.forEach(function (element) {
-            element.addEventListener('click', function (e) {
+            element.addEventListener("click", function (e) {
                 e.preventDefault();
                 const portlet = element.closest(self.portletIdentifier);
-                if (portlet) portlet.innerHTML += ('<div class="card-disabled"><div class="card-portlets-loader"></div></div>');
+                if (portlet)
+                    portlet.innerHTML +=
+                        '<div class="card-disabled"><div class="card-portlets-loader"></div></div>';
                 let pd;
-                portlet?.children.forEach(element => {
-                    if (element.classList.contains('card-disabled')) pd = element;
+                portlet?.children.forEach((element) => {
+                    if (element.classList.contains("card-disabled"))
+                        pd = element;
                 });
                 setTimeout(function () {
                     pd?.remove();
                     self.init();
                 }, 500 + 300 * (Math.random() * 5));
-            })
+            });
         });
     }
 
     init = () => {
         this.initRefresher();
         this.initCloser();
-    }
+    };
 }
 
 // Code Highlight and Copy ( Clipboard ) and Components nav Link Active
 class Code {
-
     initCode() {
-
-        let elements = document.querySelectorAll('.highlight');
+        let elements = document.querySelectorAll(".highlight");
 
         if (elements && elements.length > 0) {
             for (var i = 0; i < elements.length; ++i) {
                 var highlight = elements[i];
-                var copy = highlight.querySelector('.btn-copy-clipboard');
+                var copy = highlight.querySelector(".btn-copy-clipboard");
 
                 if (copy) {
                     var clipboard = new ClipboardJS(copy, {
                         target: function (trigger) {
-                            var highlight = trigger.closest('.highlight');
-                            var el = highlight.querySelector('.tab-pane.active');
+                            var highlight = trigger.closest(".highlight");
+                            var el =
+                                highlight.querySelector(".tab-pane.active");
 
                             if (el == null) {
-                                el = highlight.querySelector('.code');
+                                el = highlight.querySelector(".code");
                             }
 
                             return el;
-                        }
+                        },
                     });
 
-                    clipboard.on('success', function (e) {
+                    clipboard.on("success", function (e) {
                         var caption = e.trigger.innerHTML;
 
-                        e.trigger.innerHTML = 'Copied';
+                        e.trigger.innerHTML = "Copied";
                         e.clearSelection();
 
                         setTimeout(function () {
@@ -344,17 +379,16 @@ class Code {
         }
 
         Prism.plugins.NormalizeWhitespace.setDefaults({
-            'remove-trailing': true,
-            'remove-indent': true,
-            'left-trim': true,
-            'right-trim': true,
+            "remove-trailing": true,
+            "remove-indent": true,
+            "left-trim": true,
+            "right-trim": true,
         });
 
         // Gumshoe (Link Active)
-        if (document.querySelector('.docs-nav a')) {
-            new Gumshoe('.docs-nav a');
+        if (document.querySelector(".docs-nav a")) {
+            new Gumshoe(".docs-nav a");
         }
-
     }
 
     init() {
@@ -364,52 +398,49 @@ class Code {
 
 // Dragula (Draggable Components)
 class Dragula {
-
     initDragula() {
-
-        document.querySelectorAll("[data-plugin=dragula]")
+        document
+            .querySelectorAll("[data-plugin=dragula]")
 
             .forEach(function (element) {
-
-                const containersIds = JSON.parse(element.getAttribute('data-containers'));
+                const containersIds = JSON.parse(
+                    element.getAttribute("data-containers")
+                );
                 let containers = [];
                 if (containersIds) {
                     for (let i = 0; i < containersIds.length; i++) {
-                        containers.push(document.querySelectorAll("#" + containersIds[i])[0]);
+                        containers.push(
+                            document.querySelectorAll("#" + containersIds[i])[0]
+                        );
                     }
                 } else {
                     containers = [element];
                 }
 
                 // if handle provided
-                const handleClass = element.getAttribute('data-handleclass');
+                const handleClass = element.getAttribute("data-handleclass");
 
                 // init dragula
                 if (handleClass) {
                     dragula(containers, {
                         moves: function (el, container, handle) {
                             return handle.classList.contains(handleClass);
-                        }
+                        },
                     });
                 } else {
                     dragula(containers);
                 }
-
             });
-
     }
 
     init() {
         this.initDragula();
     }
-
-
 }
 
 // Swiper Slider
 class SwiperSlider {
     initSwiperSlider() {
-
         //Default Swiper
         var swiper = new Swiper("[data-swiper='default']", {
             loop: true,
@@ -479,9 +510,15 @@ class SwiperSlider {
                 clickable: true,
                 el: ".swiper-pagination",
                 renderBullet: function (index, className) {
-                    return '<span class="' + className + '">' + (index + 1) + "</span>";
+                    return (
+                        '<span class="' +
+                        className +
+                        '">' +
+                        (index + 1) +
+                        "</span>"
+                    );
                 },
-            }
+            },
         });
 
         // Pagination Progress Swiper
@@ -515,7 +552,7 @@ class SwiperSlider {
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
-            }
+            },
         });
 
         // Vertical Swiper
@@ -655,30 +692,44 @@ class SwiperSlider {
 // Toast Notification
 class ToastNotification {
     initToastNotification() {
-
         document.querySelectorAll("[data-toast]").forEach(function (element) {
             element.addEventListener("click", function () {
                 var toastData = {};
                 if (element.attributes["data-toast-text"]) {
-                    toastData.text = element.attributes["data-toast-text"].value.toString();
+                    toastData.text =
+                        element.attributes["data-toast-text"].value.toString();
                 }
                 if (element.attributes["data-toast-gravity"]) {
-                    toastData.gravity = element.attributes["data-toast-gravity"].value.toString();
+                    toastData.gravity =
+                        element.attributes[
+                            "data-toast-gravity"
+                        ].value.toString();
                 }
                 if (element.attributes["data-toast-position"]) {
-                    toastData.position = element.attributes["data-toast-position"].value.toString();
+                    toastData.position =
+                        element.attributes[
+                            "data-toast-position"
+                        ].value.toString();
                 }
                 if (element.attributes["data-toast-className"]) {
-                    toastData.className = element.attributes["data-toast-className"].value.toString();
+                    toastData.className =
+                        element.attributes[
+                            "data-toast-className"
+                        ].value.toString();
                 }
                 if (element.attributes["data-toast-duration"]) {
-                    toastData.duration = element.attributes["data-toast-duration"].value.toString();
+                    toastData.duration =
+                        element.attributes[
+                            "data-toast-duration"
+                        ].value.toString();
                 }
                 if (element.attributes["data-toast-close"]) {
-                    toastData.close = element.attributes["data-toast-close"].value.toString();
+                    toastData.close =
+                        element.attributes["data-toast-close"].value.toString();
                 }
                 if (element.attributes["data-toast-style"]) {
-                    toastData.style = element.attributes["data-toast-style"].value.toString();
+                    toastData.style =
+                        element.attributes["data-toast-style"].value.toString();
                 }
                 if (element.attributes["data-toast-offset"]) {
                     toastData.offset = element.attributes["data-toast-offset"];
@@ -706,7 +757,7 @@ class ToastNotification {
     }
 }
 
-document.addEventListener('DOMContentLoaded', function (e) {
+document.addEventListener("DOMContentLoaded", function (e) {
     new Components().init();
     new FormValidation().init();
     new FormAdvanced().init();
@@ -716,4 +767,3 @@ document.addEventListener('DOMContentLoaded', function (e) {
     new SwiperSlider().init();
     new ToastNotification().init();
 });
-
