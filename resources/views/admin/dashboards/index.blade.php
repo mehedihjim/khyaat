@@ -43,7 +43,8 @@
                             <div class="row">
                                 <div class="col-6">
                                     <div class="avatar-md bg-soft-primary rounded">
-                                        <i class="bx bx-award avatar-title fs-24 text-primary"></i>
+                                        <iconify-icon icon="solar:cart-5-bold-duotone"
+                                                      class="avatar-title fs-32 text-primary"></iconify-icon>
                                     </div>
                                 </div> <!-- end col -->
                                 <div class="col-6 text-end">
@@ -69,7 +70,8 @@
                             <div class="row">
                                 <div class="col-6">
                                     <div class="avatar-md bg-soft-primary rounded">
-                                        <i class="bx bxs-backpack avatar-title fs-24 text-primary"></i>
+                                        <iconify-icon icon="solar:cart-5-bold-duotone"
+                                                      class="avatar-title fs-32 text-primary"></iconify-icon>
                                     </div>
                                 </div> <!-- end col -->
                                 <div class="col-6 text-end">
@@ -95,7 +97,8 @@
                             <div class="row">
                                 <div class="col-6">
                                     <div class="avatar-md bg-soft-primary rounded">
-                                        <i class="bx bx-dollar-circle avatar-title text-primary fs-24"></i>
+                                        <iconify-icon icon="solar:cart-5-bold-duotone"
+                                                      class="avatar-title fs-32 text-primary"></iconify-icon>
                                     </div>
                                 </div> <!-- end col -->
                                 <div class="col-6 text-end">
