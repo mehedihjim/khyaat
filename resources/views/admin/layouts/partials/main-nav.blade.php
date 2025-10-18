@@ -1,12 +1,12 @@
 <div class="main-nav">
     <!-- Sidebar Logo -->
     <div class="logo-box">
-        <a href="{{ route('second', [ 'dashboards' , 'index']) }}" class="logo-dark">
+        <a href="#" class="logo-dark">
             <img src="/images/logo-sm.png" class="logo-sm" alt="logo sm">
             <img src="/images/logo-dark.png" class="logo-lg" alt="logo dark">
         </a>
 
-        <a href="{{ route('second', [ 'dashboards' , 'index']) }}" class="logo-light">
+        <a href="#" class="logo-light">
             <img src="/images/logo-sm.png" class="logo-sm" alt="logo sm">
             <img src="/images/logo-light.png" class="logo-lg" alt="logo light">
         </a>
@@ -23,7 +23,7 @@
             <li class="menu-title">General</li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('second', [ 'dashboards' , 'index']) }}">
+                <a class="nav-link" href="#">
                          <span class="nav-icon">
                               <iconify-icon icon="solar:widget-5-bold-duotone"></iconify-icon>
                          </span>
@@ -42,19 +42,19 @@
                 <div class="collapse" id="sidebarProducts">
                     <ul class="nav sub-navbar-nav">
                     <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['general', 'products', 'list'])}}">List</a>
+                            <a class="sub-nav-link" href="#">List</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['general', 'products', 'grid'])}}">Grid</a>
+                            <a class="sub-nav-link" href="#">Grid</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['general', 'products', 'detail'])}}">Details</a>
+                            <a class="sub-nav-link" href="#">Details</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['general', 'products', 'edit'])}}">Edit</a>
+                            <a class="sub-nav-link" href="#">Edit</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['general', 'products', 'create'])}}">Create</a>
+                            <a class="sub-nav-link" href="#">Create</a>
                         </li>
                     </ul>
                 </div>
@@ -71,13 +71,13 @@
                 <div class="collapse" id="sidebarCategory">
                     <ul class="nav sub-navbar-nav">
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['general', 'category', 'list'])}}">List</a>
+                            <a class="sub-nav-link" href="#">List</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['general', 'category', 'edit'])}}">Edit</a>
+                            <a class="sub-nav-link" href="#">Edit</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['general', 'category', 'create'])}}">Create</a>
+                            <a class="sub-nav-link" href="#">Create</a>
                         </li>
                     </ul>
                 </div>
@@ -95,10 +95,10 @@
                     <ul class="nav sub-navbar-nav">
 
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['general', 'inventory', 'warehouse'])}}">Warehouse</a>
+                            <a class="sub-nav-link" href="#">Warehouse</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['general', 'inventory', 'received-orders'])}}">Received Orders</a>
+                            <a class="sub-nav-link" href="#">Received Orders</a>
                         </li>
 
                     </ul>
@@ -117,16 +117,16 @@
                     <ul class="nav sub-navbar-nav">
 
                          <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['general', 'orders', 'list'])}}">List</a>
+                            <a class="sub-nav-link" href="#">List</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['general', 'orders', 'details'])}}">Details</a>
+                            <a class="sub-nav-link" href="#">Details</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['general', 'orders', 'cart'])}}">Cart</a>
+                            <a class="sub-nav-link" href="#">Cart</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['general', 'orders', 'checkout'])}}">Check Out</a>
+                            <a class="sub-nav-link" href="#">Check Out</a>
                         </li>
                     </ul>
                 </div>
@@ -143,13 +143,13 @@
                 <div class="collapse" id="sidebarPurchases">
                     <ul class="nav sub-navbar-nav">
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['general', 'purchase', 'list'])}}">List</a>
+                            <a class="sub-nav-link" href="#">List</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['general', 'purchase', 'order'])}}">Order</a>
+                            <a class="sub-nav-link" href="#">Order</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['general', 'purchase', 'return'])}}">Return</a>
+                            <a class="sub-nav-link" href="#">Return</a>
                         </li>
                     </ul>
                 </div>
@@ -166,13 +166,13 @@
                 <div class="collapse" id="sidebarAttributes">
                     <ul class="nav sub-navbar-nav">
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['general', 'attributes', 'list'])}}">List</a>
+                            <a class="sub-nav-link" href="#">List</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['general', 'attributes', 'edit'])}}">Edit</a>
+                            <a class="sub-nav-link" href="#">Edit</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['general', 'attributes', 'create'])}}">Create</a>
+                            <a class="sub-nav-link" href="#">Create</a>
                         </li>
                     </ul>
                 </div>
@@ -189,20 +189,20 @@
                 <div class="collapse" id="sidebarInvoice">
                     <ul class="nav sub-navbar-nav">
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['general', 'invoice', 'list'])}}">List</a>
+                            <a class="sub-nav-link" href="#">List</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['general', 'invoice', 'details'])}}">Details</a>
+                            <a class="sub-nav-link" href="#">Details</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{route('third', ['general', 'invoice', 'create'])}}">Create</a>
+                            <a class="sub-nav-link" href="#">Create</a>
                         </li>
                     </ul>
                 </div>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('second', ['general', 'settings'])}}">
+                <a class="nav-link" href="#">
                          <span class="nav-icon">
                               <iconify-icon icon="solar:settings-bold-duotone"></iconify-icon>
                          </span>
@@ -213,7 +213,7 @@
             <li class="menu-title mt-2">Users</li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('second', ['users', 'pages-profile'])}}">
+                <a class="nav-link" href="#">
                          <span class="nav-icon">
                               <iconify-icon icon="solar:chat-square-like-bold-duotone"></iconify-icon>
                          </span>
@@ -233,13 +233,13 @@
                     <ul class="nav sub-navbar-nav">
                         <ul class="nav sub-navbar-nav">
                             <li class="sub-nav-item">
-                                <a class="sub-nav-link" href="{{ route('third', ['users', 'role', 'list'])}}">List</a>
+                                <a class="sub-nav-link" href="#">List</a>
                             </li>
                             <li class="sub-nav-item">
-                                <a class="sub-nav-link" href="{{ route('third', ['users', 'role', 'edit'])}}">Edit</a>
+                                <a class="sub-nav-link" href="#">Edit</a>
                             </li>
                             <li class="sub-nav-item">
-                                <a class="sub-nav-link" href="{{ route('third', ['users', 'role', 'create'])}}">Create</a>
+                                <a class="sub-nav-link" href="#">Create</a>
                             </li>
                         </ul>
                     </ul>
@@ -247,7 +247,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('second', ['users', 'pages-permission'])}}">
+                <a class="nav-link" href="#">
                          <span class="nav-icon">
                               <iconify-icon icon="solar:checklist-minimalistic-bold-duotone"></iconify-icon>
                          </span>
@@ -267,10 +267,10 @@
                     <ul class="nav sub-navbar-nav">
 
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['users', 'customer', 'list'])}}">List</a>
+                            <a class="sub-nav-link" href="#">List</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['users', 'customer',  'details'])}}">Details</a>
+                            <a class="sub-nav-link" href="#">Details</a>
                         </li>
                     </ul>
                 </div>
@@ -287,16 +287,16 @@
                 <div class="collapse" id="sidebarSellers">
                     <ul class="nav sub-navbar-nav">
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['users', 'seller', 'list'])}}">List</a>
+                            <a class="sub-nav-link" href="#">List</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['users', 'seller', 'details'])}}">Details</a>
+                            <a class="sub-nav-link" href="#">Details</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['users', 'seller', 'edit'])}}">Edit</a>
+                            <a class="sub-nav-link" href="#">Edit</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['users', 'seller', 'create'])}}">Create</a>
+                            <a class="sub-nav-link" href="#">Create</a>
                         </li>
                     </ul>
                 </div>
@@ -315,17 +315,17 @@
                 <div class="collapse" id="sidebarCoupons">
                     <ul class="nav sub-navbar-nav">
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('second', ['other', 'coupons-list'])}}">List</a>
+                            <a class="sub-nav-link" href="#">List</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('second', ['other', 'coupons-add'])}}">Add</a>
+                            <a class="sub-nav-link" href="#">Add</a>
                         </li>
                     </ul>
                 </div>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('second', ['other', 'pages-review'])}}">
+                <a class="nav-link" href="#">
                          <span class="nav-icon">
                               <iconify-icon icon="solar:chat-square-like-bold-duotone"></iconify-icon>
                          </span>
@@ -336,7 +336,7 @@
             <li class="menu-title mt-2">Other Apps</li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('second', ['apps', 'chat'])}}">
+                <a class="nav-link" href="#">
                          <span class="nav-icon">
                               <iconify-icon icon="solar:chat-round-bold-duotone"></iconify-icon>
                          </span>
@@ -345,7 +345,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('second', ['apps', 'email'])}}">
+                <a class="nav-link" href="#">
                          <span class="nav-icon">
                               <iconify-icon icon="solar:mailbox-bold-duotone"></iconify-icon>
                          </span>
@@ -354,7 +354,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('second', ['apps', 'calendar'])}}">
+                <a class="nav-link" href="#">
                          <span class="nav-icon">
                               <iconify-icon icon="solar:calendar-bold-duotone"></iconify-icon>
                          </span>
@@ -363,7 +363,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('second', ['apps', 'todo'])}}">
+                <a class="nav-link" href="#">
                          <span class="nav-icon">
                               <iconify-icon icon="solar:checklist-bold-duotone"></iconify-icon>
                          </span>
@@ -374,7 +374,7 @@
             <li class="menu-title mt-2">Support</li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('second', ['support', 'help-center'])}}">
+                <a class="nav-link" href="#">
                          <span class="nav-icon">
                               <iconify-icon icon="solar:help-bold-duotone"></iconify-icon>
                          </span>
@@ -383,7 +383,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('second', ['support', 'faqs'])}}">
+                <a class="nav-link" href="#">
                          <span class="nav-icon">
                               <iconify-icon icon="solar:question-circle-bold-duotone"></iconify-icon>
                          </span>
@@ -392,7 +392,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('second', ['support', 'privacy-policy'])}}">
+                <a class="nav-link" href="#">
                          <span class="nav-icon">
                               <iconify-icon icon="solar:document-text-bold-duotone"></iconify-icon>
                          </span>
@@ -413,25 +413,25 @@
                 <div class="collapse" id="sidebarPages">
                     <ul class="nav sub-navbar-nav">
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['custom', 'pages', 'starter'])}}">Welcome</a>
+                            <a class="sub-nav-link" href="#">Welcome</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['custom', 'pages', 'coming-soon'])}}">Coming Soon</a>
+                            <a class="sub-nav-link" href="#">Coming Soon</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['custom', 'pages', 'timeline'])}}">Timeline</a>
+                            <a class="sub-nav-link" href="#">Timeline</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['custom', 'pages', 'pricing'])}}">Pricing</a>
+                            <a class="sub-nav-link" href="#">Pricing</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['custom', 'pages', 'maintenance'])}}">Maintenance</a>
+                            <a class="sub-nav-link" href="#">Maintenance</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['custom', 'pages', 'error-404'])}}">404 Error</a>
+                            <a class="sub-nav-link" href="#">404 Error</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['custom', 'pages', 'error-404-alt'])}}">404 Error (alt)</a>
+                            <a class="sub-nav-link" href="#">404 Error (alt)</a>
                         </li>
                     </ul>
                 </div>
@@ -448,17 +448,17 @@
                 <div class="collapse" id="sidebarAuthentication">
                     <ul class="nav sub-navbar-nav">
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('second', [ 'auth' , 'login']) }}">Sign In</a>
+                            <a class="sub-nav-link" href="#">Sign In</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('second', [ 'auth' , 'register']) }}">Sign Up</a>
+                            <a class="sub-nav-link" href="#">Sign Up</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('second', [ 'auth' , 'reset-password']) }}">Reset
+                            <a class="sub-nav-link" href="#">Reset
                                 Password</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('second', [ 'auth' , 'lock-screen']) }}">Lock
+                            <a class="sub-nav-link" href="#">Lock
                                 Screen</a>
                         </li>
                     </ul>
@@ -466,7 +466,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('second', ['custom', 'widgets'])}}">
+                <a class="nav-link" href="#">
                          <span class="nav-icon">
                               <iconify-icon icon="solar:atom-bold-duotone"></iconify-icon>
                          </span>
@@ -488,70 +488,70 @@
                 <div class="collapse" id="sidebarBaseUI">
                     <ul class="nav sub-navbar-nav">
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'ui', 'accordion'])}}">Accordion</a>
+                            <a class="sub-nav-link" href="#">Accordion</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'ui', 'alerts'])}}">Alerts</a>
+                            <a class="sub-nav-link" href="#">Alerts</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'ui', 'avatar'])}}">Avatar</a>
+                            <a class="sub-nav-link" href="#">Avatar</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'ui', 'badge'])}}">Badge</a>
+                            <a class="sub-nav-link" href="#">Badge</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'ui', 'breadcrumb'])}}">Breadcrumb</a>
+                            <a class="sub-nav-link" href="#">Breadcrumb</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'ui', 'buttons'])}}">Buttons</a>
+                            <a class="sub-nav-link" href="#">Buttons</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'ui', 'cards'])}}">Card</a>
+                            <a class="sub-nav-link" href="#">Card</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'ui', 'carousel'])}}">Carousel</a>
+                            <a class="sub-nav-link" href="#">Carousel</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'ui', 'collapse'])}}">Collapse</a>
+                            <a class="sub-nav-link" href="#">Collapse</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'ui', 'dropdown'])}}">Dropdown</a>
+                            <a class="sub-nav-link" href="#">Dropdown</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'ui', 'list-group'])}}">List Group</a>
+                            <a class="sub-nav-link" href="#">List Group</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'ui', 'modal'])}}">Modal</a>
+                            <a class="sub-nav-link" href="#">Modal</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'ui', 'tabs'])}}">Tabs</a>
+                            <a class="sub-nav-link" href="#">Tabs</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'ui', 'offcanvas'])}}">Offcanvas</a>
+                            <a class="sub-nav-link" href="#">Offcanvas</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'ui', 'pagination'])}}">Pagination</a>
+                            <a class="sub-nav-link" href="#">Pagination</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'ui', 'placeholder'])}}">Placeholders</a>
+                            <a class="sub-nav-link" href="#">Placeholders</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'ui', 'popovers'])}}">Popovers</a>
+                            <a class="sub-nav-link" href="#">Popovers</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'ui', 'progress'])}}">Progress</a>
+                            <a class="sub-nav-link" href="#">Progress</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'ui', 'scrollspy'])}}">Scrollspy</a>
+                            <a class="sub-nav-link" href="#">Scrollspy</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'ui', 'spinners'])}}">Spinners</a>
+                            <a class="sub-nav-link" href="#">Spinners</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'ui', 'toasts'])}}">Toasts</a>
+                            <a class="sub-nav-link" href="#">Toasts</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'ui', 'tooltips'])}}">Tooltips</a>
+                            <a class="sub-nav-link" href="#">Tooltips</a>
                         </li>
                     </ul>
                 </div>
@@ -568,19 +568,19 @@
                 <div class="collapse" id="sidebarExtendedUI">
                     <ul class="nav sub-navbar-nav">
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'advanced', 'rating'])}}">Ratings</a>
+                            <a class="sub-nav-link" href="#">Ratings</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'advanced', 'sweet-alerts'])}}">Sweet Alert</a>
+                            <a class="sub-nav-link" href="#">Sweet Alert</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'advanced', 'swiper-slider'])}}">Swiper Slider</a>
+                            <a class="sub-nav-link" href="#">Swiper Slider</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'advanced', 'scrollbar'])}}">Scrollbar</a>
+                            <a class="sub-nav-link" href="#">Scrollbar</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'advanced', 'toastify'])}}">Toastify</a>
+                            <a class="sub-nav-link" href="#">Toastify</a>
                         </li>
                     </ul>
                 </div>
@@ -597,52 +597,52 @@
                 <div class="collapse" id="sidebarCharts">
                     <ul class="nav sub-navbar-nav">
                        <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'charts', 'apex-area'])}}">Area</a>
+                            <a class="sub-nav-link" href="#">Area</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'charts', 'apex-bar'])}}">Bar</a>
+                            <a class="sub-nav-link" href="#">Bar</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'charts','apex-bubble'])}}">Bubble</a>
+                            <a class="sub-nav-link" href="#">Bubble</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'charts','apex-candlestick'])}}">Candlestick</a>
+                            <a class="sub-nav-link" href="#">Candlestick</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'charts','apex-column'])}}">Column</a>
+                            <a class="sub-nav-link" href="#">Column</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'charts','apex-heatmap'])}}">Heatmap</a>
+                            <a class="sub-nav-link" href="#">Heatmap</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'charts', 'apex-line'])}}">Line</a>
+                            <a class="sub-nav-link" href="#">Line</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'charts', 'apex-mixed'])}}">Mixed</a>
+                            <a class="sub-nav-link" href="#">Mixed</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'charts', 'apex-timeline'])}}">Timeline</a>
+                            <a class="sub-nav-link" href="#">Timeline</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'charts', 'apex-boxplot'])}}">Boxplot</a>
+                            <a class="sub-nav-link" href="#">Boxplot</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'charts', 'apex-treemap'])}}">Treemap</a>
+                            <a class="sub-nav-link" href="#">Treemap</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'charts', 'apex-pie'])}}">Pie</a>
+                            <a class="sub-nav-link" href="#">Pie</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components',  'charts', 'apex-radar'])}}">Radar</a>
+                            <a class="sub-nav-link" href="#">Radar</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'charts', 'apex-radialbar'])}}">RadialBar</a>
+                            <a class="sub-nav-link" href="#">RadialBar</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'charts', 'apex-scatter'])}}">Scatter</a>
+                            <a class="sub-nav-link" href="#">Scatter</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'charts', 'apex-polar-area'])}}">Polar Area</a>
+                            <a class="sub-nav-link" href="#">Polar Area</a>
                         </li>
                     </ul>
                 </div>
@@ -659,37 +659,37 @@
                 <div class="collapse" id="sidebarForms">
                     <ul class="nav sub-navbar-nav">
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components' ,'forms', 'basic'])}}">Basic Elements</a>
+                            <a class="sub-nav-link" href="#">Basic Elements</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components' ,'forms', 'checkbox-radio'])}}">Checkbox &amp; Radio</a>
+                            <a class="sub-nav-link" href="#">Checkbox &amp; Radio</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components' ,'forms', 'choice-select'])}}">Choice Select</a>
+                            <a class="sub-nav-link" href="#">Choice Select</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components' ,'forms', 'clipboard'])}}">Clipboard</a>
+                            <a class="sub-nav-link" href="#">Clipboard</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components' ,'forms', 'flatepicker'])}}">Flatepicker</a>
+                            <a class="sub-nav-link" href="#">Flatepicker</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components' ,'forms', 'validation'])}}">Validation</a>
+                            <a class="sub-nav-link" href="#">Validation</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'forms', 'wizard'])}}">Wizard</a>
+                            <a class="sub-nav-link" href="#">Wizard</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'forms', 'file-upload'])}}">File Upload</a>
+                            <a class="sub-nav-link" href="#">File Upload</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'forms', 'editors'])}}">Editors</a>
+                            <a class="sub-nav-link" href="#">Editors</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'forms', 'input-mask'])}}">Input Mask</a>
+                            <a class="sub-nav-link" href="#">Input Mask</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'forms', 'range-slider'])}}">Slider</a>
+                            <a class="sub-nav-link" href="#">Slider</a>
                         </li>
                     </ul>
                 </div>
@@ -706,10 +706,10 @@
                 <div class="collapse" id="sidebarTables">
                     <ul class="nav sub-navbar-nav">
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'tables', 'basic'])}}">Basic Tables</a>
+                            <a class="sub-nav-link" href="#">Basic Tables</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'tables', 'gridjs'])}}">Grid Js</a>
+                            <a class="sub-nav-link" href="#">Grid Js</a>
                         </li>
                     </ul>
                 </div>
@@ -726,10 +726,10 @@
                 <div class="collapse" id="sidebarIcons">
                     <ul class="nav sub-navbar-nav">
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'icons', 'boxicons'])}}">Boxicons</a>
+                            <a class="sub-nav-link" href="#">Boxicons</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'icons', 'solar'])}}">Solar Icons</a>
+                            <a class="sub-nav-link" href="#">Solar Icons</a>
                         </li>
                     </ul>
                 </div>
@@ -746,10 +746,10 @@
                 <div class="collapse" id="sidebarMaps">
                     <ul class="nav sub-navbar-nav">
                          <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'maps', 'google'])}}">Google Maps</a>
+                            <a class="sub-nav-link" href="#">Google Maps</a>
                         </li>
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="{{ route('third', ['components', 'maps', 'vector'])}}">Vector Maps</a>
+                            <a class="sub-nav-link" href="#">Vector Maps</a>
                         </li>
                     </ul>
                 </div>
