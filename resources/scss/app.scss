@@ -2,16 +2,59 @@
 // app.scss
 //
 
-// Core files
-@import "./node_modules/bootstrap/scss/functions";
-@import "./node_modules/bootstrap/scss/variables";
+// Bootstrap Core (must be in this order)
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+
+// Your custom variables (override Bootstrap defaults)
 @import "config/variables";
 @import "config/variables-dark";
-
 @import "config/variables-custom";
+
+// Bootstrap Maps & Mixins (must come after variables)
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/root";
+
+// Your theme mode
 @import "config/theme-mode";
 
-@import "./node_modules/bootstrap/scss/bootstrap";
+// Bootstrap Utilities API (this generates utility classes like .d-flex)
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/utilities/api";
+
+// Bootstrap Components (add the ones you need)
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/dropdown";
+@import "bootstrap/scss/button-group";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar";
+@import "bootstrap/scss/card";
+@import "bootstrap/scss/accordion";
+@import "bootstrap/scss/breadcrumb";
+@import "bootstrap/scss/pagination";
+@import "bootstrap/scss/badge";
+@import "bootstrap/scss/alert";
+@import "bootstrap/scss/progress";
+@import "bootstrap/scss/list-group";
+@import "bootstrap/scss/close";
+@import "bootstrap/scss/toasts";
+@import "bootstrap/scss/modal";
+@import "bootstrap/scss/tooltip";
+@import "bootstrap/scss/popover";
+@import "bootstrap/scss/carousel";
+@import "bootstrap/scss/spinners";
+@import "bootstrap/scss/offcanvas";
+@import "bootstrap/scss/placeholders";
+@import "bootstrap/scss/helpers";
 
 // Structure
 @import "structure/topbar";
@@ -19,7 +62,7 @@
 @import "structure/page-title";
 @import "structure/footer";
 
-// Bootstrap
+// Components (your custom components)
 @import "components/accordion";
 @import "components/alerts";
 @import "components/avatar";
@@ -46,8 +89,7 @@
 @import "components/tooltip";
 @import "components/widgets";
 
-
-// Plugin
+// Plugins
 @import "plugins/simplebar";
 @import "plugins/calendar";
 @import "plugins/choice";
@@ -65,12 +107,10 @@
 @import "plugins/range-slider";
 @import "plugins/toastify";
 
-
-// App Page
+// App Pages
 @import "pages/app-chat";
 @import "pages/app-email";
 @import "pages/app-ecommerce";
-
 
 // Pages
 @import "pages/icon-demo";

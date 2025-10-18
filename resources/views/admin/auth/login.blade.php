@@ -36,15 +36,22 @@
                                             <label class="form-label" for="example-email">Email</label>
                                             <input type="email" id="example-email" name="email"
                                                    class="form-control bg-" placeholder="Enter your email"
-                                                   value="test@example.com">
+                                                   value="">
                                         </div>
-                                        {{-- <div class="mb-3">
-                                            <a href="{{ route('second', [ 'auth' , 'reset-password']) }}"
-                                               class="float-end text-muted text-unline-dashed ms-1">Reset password</a>
+                                        <div class="mb-3">
+                                            {{-- <a href="{{ route('second', [ 'auth' , 'reset-password']) }}"
+                                               class="float-end text-muted text-unline-dashed ms-1">Reset password</a> --}}
                                             <label class="form-label" for="example-password">Password</label>
-                                            <input type="password" id="example-password" class="form-control"
-                                                   placeholder="Enter your password" name="password" value="password">
-                                        </div> --}}
+                                            <div class="position-relative">
+                                                <input type="password" id="example-password" class="form-control"
+                                                       placeholder="Enter your password" name="password" value="">
+                                                <button type="button" class="btn btn-link position-absolute end-0 top-50 translate-middle-y text-muted p-1" 
+                                                        onclick="togglePassword()" 
+                                                        style="text-decoration: none;">
+                                                    <i class="bx bx-hide fs-20" id="toggleIcon"></i>
+                                                </button>
+                                            </div>
+                                        </div>
                                         <div class="mb-3">
                                             <div class="form-check">
                                                 <input type="checkbox" class="form-check-input" id="checkbox-signin">
@@ -85,4 +92,21 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function togglePassword() {
+            const passwordInput = document.getElementById('example-password');
+            const toggleIcon = document.getElementById('toggleIcon');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.classList.remove('bx-hide');
+                toggleIcon.classList.add('bx-show');
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.classList.remove('bx-show');
+                toggleIcon.classList.add('bx-hide');
+            }
+        }
+    </script>
 @endsection
